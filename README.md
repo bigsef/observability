@@ -60,11 +60,13 @@ observability   jaeger-operator-metrics                              ClusterIP  
 ## Setup the Jaeger and Prometheus source
 ![Alt text](./answer-img/grafana-login.png?raw=true "Grafana")
 ![Alt text](./answer-img/grafana-data-source.png?raw=true "Grafana data source")
+
 -------
 
 ## Create a Basic Dashboard
-![Alt text](./answer-img/prometheus-dashboard-1.png?raw=true "grafana")
-![Alt text](./answer-img/prometheus-dashboard-2.png?raw=true "grafana")
+![Alt text](./answer-img/prometheus-dashboard-1.png?raw=true "basic-grafana")
+![Alt text](./answer-img/prometheus-dashboard-2.png?raw=true "basic-grafana")
+
 -------
 
 ## Describe SLO/SLI
@@ -85,7 +87,12 @@ for measure these SLIs we can using **Four Golden Signals** and add to it a serv
 -------
 
 ## Create a Dashboard to measure our SLIs
-*TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
+![Alt text](./answer-img/dashboard.png?raw=true "dashboard")
+![Alt text](./answer-img/uptime.png?raw=true "uptime")
+![Alt text](./answer-img/40X-error.png?raw=true "40-x")
+![Alt text](./answer-img/50X-error.png?raw=true "50-x")
+
+-------
 
 ## Tracing our Flask App
 *TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here.
