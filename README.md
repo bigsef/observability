@@ -63,7 +63,9 @@ observability   jaeger-operator-metrics                              ClusterIP  
 -------
 
 ## Create a Basic Dashboard
-*TODO:* Create a dashboard in Grafana that shows Prometheus as a source. Take a screenshot and include it here.
+![Alt text](./answer-img/prometheus-dashboard-1.png?raw=true "grafana")
+![Alt text](./answer-img/prometheus-dashboard-2.png?raw=true "grafana")
+-------
 
 ## Describe SLO/SLI
 *TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
