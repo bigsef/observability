@@ -1,9 +1,16 @@
 from flask import Flask, render_template, request, jsonify
 
 import pymongo
+import logging
 from flask_pymongo import PyMongo
+from prometheus_flask_exporter import PrometheusMetrics
+
+logging.basicConfig(level=logging.INFO)
+logging.info("Setting LOGLEVEL to INFO")
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
+metrics.info("app_info", "App Info, BackEnd info logs", version="1.0.0")
 
 app.config['MONGO_DBNAME'] = 'example-mongodb'
 app.config['MONGO_URI'] = 'mongodb://example-mongodb-svc.default.svc.cluster.local:27017/example-mongodb'
@@ -30,5 +37,10 @@ def add_star():
   output = {'name' : new_star['name'], 'distance' : new_star['distance']}
   return jsonify({'result' : output})
 
+@app.route('/healthz')
+def healthcheck():
+    return jsonify({"result":"OK - healthy"})
+
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=False)

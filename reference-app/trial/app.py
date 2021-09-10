@@ -1,5 +1,5 @@
+import logging
 from flask import Flask, render_template, request, jsonify
-
 from jaeger_client import Config
 from jaeger_client.metrics.prometheus import PrometheusMetricsFactory
 from opentelemetry import trace
@@ -13,16 +13,22 @@ from opentelemetry.sdk.trace.export import (
     ConsoleSpanExporter,
     SimpleExportSpanProcessor,
 )
+from prometheus_flask_exporter import PrometheusMetrics
 
 trace.set_tracer_provider(TracerProvider())
 trace.get_tracer_provider().add_span_processor(
     SimpleExportSpanProcessor(ConsoleSpanExporter())
 )
 
+logging.basicConfig(level=logging.INFO)
+logging.info("Setting LOGLEVEL to INFO")
+
 app = Flask(__name__)
 FlaskInstrumentor().instrument_app(app)
 RequestsInstrumentor().instrument()
 
+metrics = PrometheusMetrics(app)
+metrics.info("app_info", "App Info, Trial info logs", version="1.0.0")
 
 #config = Config(
 #        config={},
@@ -69,5 +75,10 @@ def homepage():
 
     return jsonify(homepages)
 
+@app.route('/healthz')
+def healthcheck():
+    return jsonify({"result":"OK - healthy"})
+
+
 if __name__ == "__main__":
-    app.run(debug=True,)
+    app.run(debug=False)
