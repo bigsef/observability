@@ -1,4 +1,8 @@
-**Note:** For the screenshots, you can store all of your answer images in the `answer-img` directory.
+**Note:**
+- For the screenshots, you can store all of your answer images in the `answer-img` directory.
+- because i using new MackBook pro (M1), i have kubernates throght docker desktop. but i have issue with prometheus node
+exporter. so i solve this issue by setup prometheus via this command -> 
+`helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring -f prometheus_values.yaml`
 
 ## Verify the monitoring installation
 **ALl pods for the three components** -> `kubectl get po --all-namespaces`
