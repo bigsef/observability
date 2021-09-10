@@ -68,10 +68,21 @@ observability   jaeger-operator-metrics                              ClusterIP  
 -------
 
 ## Describe SLO/SLI
-*TODO:* Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
+Service-Level Indicator aka **SLI** is A measurement that indicates the level of performance a service is achieving. In other words, we use "SLI" to check whether "SLO" is achieved or not.
+
+**in context of:**
+- *monthly uptime*, the backend services is functioning over 99.99% of time in month.
+- *request response time*, the front services has API response time less than 200ms for 99.99% request
+-------
 
 ## Creating SLI metrics.
-*TODO:* It is important to know why we want to measure certain metrics for our customer. Describe in detail 5 metrics to measure these SLIs. 
+for measure these SLIs we can using **Four Golden Signals** and add to it a service uptime.
+1. **Latency** time taken to serve a request (measured by *ms*).
+2. **Traffic** amount of stress on a system from demand (measured by *requests/second*).
+3. **Saturation** overall capacity of a service like memory or CPU (measured by *percentage number*).
+4. **Errors** number of requests that are failing (measured by *fixed number*).
+5. **Uptime** percentage of time the service are available and functioning (measured by *percentage number*).
+-------
 
 ## Create a Dashboard to measure our SLIs
 *TODO:* Create a dashboard to measure the uptime of the frontend and backend services We will also want to measure to measure 40x and 50x errors. Create a dashboard that show these values over a 24 hour period and take a screenshot.
