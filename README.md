@@ -1,6 +1,6 @@
 **Note:**
 - For the screenshots, you can store all of your answer images in the `answer-img` directory.
-- because i using new MackBook pro (M1), i have kubernates throght docker desktop. but i have issue with prometheus node
+- because i using new MackBook pro (M1), i have Kubernetes through docker desktop. but i have issue with prometheus node
 exporter. so i solve this issue by setup prometheus via this command -> 
 `helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring -f prometheus_values.yaml`
 
@@ -127,10 +127,27 @@ not exist on accessible and when review cluster service it also not exist on it.
 --------
 
 ## Creating SLIs and SLOs
-*TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name three SLIs that you would use to measure the success of this SLO.
+1. Services uptime should be grate than 99.99%.
+2. Service HTTP response time should be less than 200ms for 99.99% responses.
+3. Service HTTP request should have status code 20X for 99.99% requests.
+
+--------
 
 ## Building KPIs for our plan
-*TODO*: Now that we have our SLIs and SLOs, create KPIs to accurately measure these metrics. We will make a dashboard for this, but first write them down here.
+- All service uptime should be grate than 99.99%.
+- Average response time to HTTP request should be less than 200ms.
+- Percentage of CPU utilization should be less than 90%
+- Percentage of Memory utilization should be less than 90%.
 
 ## Final Dashboard
-*TODO*: Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.  
+- **CPU utilization** Cluster percentage CPU usage.
+- **Memory utilization** Cluster percentage memory usage.
+- **Service Uptime** Service Percentage uptime.
+- **40X errors** number of requests with 40X status code.
+- **50X errors** number of requests with 50X status code.
+- **Backend Tracing** jaeger tracing with backend service.
+- **Success Requests** number of requests with 20X status code.
+- **Request duration per API** duration average per API endpoint
+
+![Alt text](./answer-img/final-dashboard-1.png?raw=true "grafana-tracing")
+![Alt text](./answer-img/final-dashboard-2.png?raw=true "grafana-tracing")
