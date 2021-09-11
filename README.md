@@ -127,6 +127,12 @@ not exist on accessible and when review cluster service it also not exist on it.
 --------
 
 ## Creating SLIs and SLOs
+**SLO**
+1. service have uptime grate than 99.99% per month.
+2. 99.99% of requests return in 200ms in the pat month.
+3. 99.99% of response code are success request per week.
+
+**SLI**
 1. Services uptime should be grate than 99.99%.
 2. Service HTTP response time should be less than 200ms for 99.99% responses.
 3. Service HTTP request should have status code 20X for 99.99% requests.
