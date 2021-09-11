@@ -99,10 +99,14 @@ for measure these SLIs we can using **Four Golden Signals** and add to it a serv
 -------
 
 ## Tracing our Flask App
-*TODO:*  We will create a Jaeger span to measure the processes on the backend. Once you fill in the span, provide a screenshot of it here.
+![Alt text](./answer-img/jaeger-dashboard.png?raw=true "jaeger-dashboard")
+
+--------
 
 ## Jaeger in Dashboards
-*TODO:* Now that the trace is running, let's add the metric to our current Grafana dashboard. Once this is completed, provide a screenshot of it here.
+![Alt text](./answer-img/grafana-tracing.png?raw=true "grafana-tracing")
+
+--------
 
 ## Report Error
 *TODO:* Using the template below, write a trouble ticket for the developers, to explain the errors that you are seeing (400, 500, latency) and to let them know the file that is causing the issue.
