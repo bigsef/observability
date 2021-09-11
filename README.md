@@ -109,22 +109,22 @@ for measure these SLIs we can using **Four Golden Signals** and add to it a serv
 --------
 
 ## Report Error
-*TODO:* Using the template below, write a trouble ticket for the developers, to explain the errors that you are seeing (400, 500, latency) and to let them know the file that is causing the issue.
-
 TROUBLE TICKET
 
-Name:
+**Name:** Post new start error
 
-Date:
+**Date:** 2021-09-11
 
-Subject:
+**Subject:** MongoDB not accessible
 
-Affected Area:
+**Affected Area:** Backend Service
 
-Severity:
+**Severity:** Critical
 
-Description:
+**Description:** on backend service `/star` Endpoint need to access mongodb service to complete process of POST request, but this service
+not exist on accessible and when review cluster service it also not exist on it.
 
+--------
 
 ## Creating SLIs and SLOs
 *TODO:* We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name three SLIs that you would use to measure the success of this SLO.
